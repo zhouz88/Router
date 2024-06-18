@@ -5,12 +5,12 @@ apply plugin: "kotlin-kapt"
 
 android {
     namespace = "com.zz.kerwingo"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.zz.kerwingo"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "2.0"
 
@@ -29,8 +29,8 @@ android {
         kotlinCompilerExtensionVersion = "1.4.8"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = "1.8"
