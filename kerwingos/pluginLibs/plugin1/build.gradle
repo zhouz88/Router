@@ -21,7 +21,7 @@ publishing {
             groupId 'com.routerplugin.zheng'
             artifactId 'route'
 
-//            //from components.android
+            //from components.android
 //            afterEvaluate {
 //                from components.release
 //            }
@@ -40,5 +40,5 @@ publishing {
         }
     }
 }
-//注意buildSrc 特殊 不能用于直接发布到maven库 需要copy到lib 生成新的Lib才行
+//注意buildSrc 不能用于直接发布到maven库 需要copy
 println "递归 routeSrc"

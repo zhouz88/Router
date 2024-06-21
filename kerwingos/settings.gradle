@@ -23,6 +23,7 @@ rootProject.name = "KerwinGo"
 include ':app'
 include ':libraries:lib1'
 include ':libraries:lib2'
+include ":pluginLibs:plugin1"
 
 println "setting.g + ${rootProject.projectDir}"
 gradle.addBuildListener(new BuildAdapter(){
