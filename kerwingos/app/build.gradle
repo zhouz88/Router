@@ -3,6 +3,10 @@ apply plugin: 'kotlin-android'
 //apply plugin: 'kotlin-android-extensions'
 apply plugin: "kotlin-kapt"
 
+//应用路由插件
+apply plugin: "com.zheng.router" //把插件代码应用到工程
+
+//下面这些东西叫做插件的 extension 用来做参数配置
 android {
     namespace = "com.zz.kerwingo"
     compileSdk = 33
@@ -40,6 +44,10 @@ android {
         compose true
         viewBinding true
     }
+}
+
+zhouzhengplugin {
+    wikiDir getRootDir().absolutePath
 }
 
 dependencies {

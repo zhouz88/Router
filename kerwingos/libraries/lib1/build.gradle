@@ -50,7 +50,6 @@ dependencies {
 
 publishing {
     publications {
-        println "日志 我是 publish"
         aar(MavenPublication) {
             //5.0 implementation
             //6.0 api

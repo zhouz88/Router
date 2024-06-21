@@ -1,0 +1,16 @@
+plugins {
+    id 'groovy'
+}
+//插件工程优先级很高 在root build.gradle 之前运行！
+
+repositories {
+    jcenter()
+}
+//声明依赖
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+}
+// 插件的话，buildSrc 是规定必须这个名字
+
+println "递归 routeSrc"
