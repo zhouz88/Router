@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-
+   //implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+    compileOnly 'com.github.ome450901:SimpleRatingBar:1.5.1'
 //    implementation libs.appcompat
 //    implementation libs.material
 //    testImplementation libs.junit
@@ -50,10 +51,11 @@ dependencies {
 publishing {
     publications {
         aar(MavenPublication) {
-
-            version '3.0.0'
-            groupId 'org.zhouzheng.widget'
-            artifactId 'zhengview'
+            //5.0 implementation
+            //6.0 api
+            version '6.0.0'
+            groupId 'com.zhouzheng.widget'
+            artifactId 'view'
 
             //from components.android
             afterEvaluate {
