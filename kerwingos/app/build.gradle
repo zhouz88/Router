@@ -47,4 +47,17 @@ dependencies {
 }
 
 
+task testTask() {
+    doLast {
+        println "日志 我是 testtask app"
+    }
+}
+
+task testTask2() {
+    dependsOn testTask //这里有个DAG图
+    doLast {
+        println "日志 我是 testtask2"
+    }
+}
+
 println "递归 app"

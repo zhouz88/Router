@@ -77,4 +77,9 @@ publishing {
     }
 }
 
+task testTask() {
+    doLast {
+        println "日志 我是 testtask lib1"
+    }
+}
 println "递归 lib1"

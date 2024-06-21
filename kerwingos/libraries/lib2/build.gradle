@@ -43,6 +43,13 @@ task Saygood() {
     }
 }
 
+
+task testTask() {
+    doLast {
+        println "日志 我是 testtask lib2"
+    }
+}
+
 println "递归 lib2"
 
 /**

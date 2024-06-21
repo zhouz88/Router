@@ -38,10 +38,10 @@ gradle.addBuildListener(new BuildAdapter(){
         super.projectsEvaluated(gradle)
         //执行各个目录下build.gradle脚本 来完成project对象的配置，
         // 并且根据项目自己的配置，构建任务依赖关系图，以便下一阶段执行。
-        println "lifecycle 配置完成"
 
         //拿到所有子project 实例
         dfs(gradle.rootProject)
+        println "lifecycle 配置完成"
     }
 
     private void dfs(Project project) {
@@ -65,4 +65,4 @@ gradle.addBuildListener(new BuildAdapter(){
         println "lifecycle 构建结束"
     }
 })
-
+//任务依赖 实际过程靠任务的链路去执行 如果有多个相同task 都会执行
