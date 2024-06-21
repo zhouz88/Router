@@ -24,3 +24,45 @@ include ':app'
 include ':libraries:lib1'
 include ':libraries:lib2'
 
+println "setting.g + ${rootProject.projectDir}"
+gradle.addBuildListener(new BuildAdapter(){
+    @Override
+    void settingsEvaluated(Settings settings) {
+        super.settingsEvaluated(settings)
+        //执行setting.gradle
+        println "lifecycle 初始完成"
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+        super.projectsEvaluated(gradle)
+        //执行各个目录下build.gradle脚本 来完成project对象的配置，
+        // 并且根据项目自己的配置，构建任务依赖关系图，以便下一阶段执行。
+        println "lifecycle 配置完成"
+
+        //拿到所有子project 实例
+        dfs(gradle.rootProject)
+    }
+
+    private void dfs(Project project) {
+        File buildFile = new File(project.projectDir, 'build.gradle')
+        if (!buildFile.exists()) {
+            buildFile = new File(project.projectDir, 'build.gradle.kts')
+        }
+        if (project != gradle.rootProject && buildFile.exists()) {
+            println "子工程路径${project.projectDir}"
+            return
+        }
+        project.childProjects.each {
+            dfs(it.value)
+        }
+    }
+
+    @Override
+    void buildFinished(BuildResult result) {
+        super.buildFinished(result)
+        //把配置阶段生成的依赖任务图，依次去执行
+        println "lifecycle 构建结束"
+    }
+})
+

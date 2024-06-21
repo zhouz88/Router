@@ -76,3 +76,5 @@ publishing {
         }
     }
 }
+
+println "递归 lib1"

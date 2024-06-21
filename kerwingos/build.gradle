@@ -54,3 +54,5 @@ task clean(type: Delete) {
 //task upload_component {
 //    dependsOn gradle.includedBuild("lit-component").task(":upload")
 //}
+
+println "递归 根目录"

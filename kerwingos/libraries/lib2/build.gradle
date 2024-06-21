@@ -36,3 +36,15 @@ android {
 dependencies {
 
 }
+
+task Saygood() {
+    doLast {
+        println "lib2的一个任务"
+    }
+}
+
+println "递归 lib2"
+
+/**
+ * ./gradlew clean -q   这里-q quiet 安静下 只输出关键信息！
+ */
