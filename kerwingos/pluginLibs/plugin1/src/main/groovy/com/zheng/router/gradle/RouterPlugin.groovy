@@ -21,6 +21,11 @@ class RouterPlugin implements Plugin<Project> {
             RouterExtension extension = target["zhouzhengplugin"]
             println "Plugin，app 的extension${extension.wikiDir}"
             println "Plugin，工程 app 的配置结束"
+            target.task('zzCustomTask') {
+                doLast {
+                    println '执行自定义任务（在r插件中注册）'
+                }
+            }
         }
     }
 }
