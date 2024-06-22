@@ -9,7 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.routerplugin.zheng</groupId>
   <artifactId>route</artifactId>
-  <version>16.0.0</version>
+  <version>17.0.0</version>
   <dependencies>
     <dependency>
       <groupId>com.google.code.gson</groupId>

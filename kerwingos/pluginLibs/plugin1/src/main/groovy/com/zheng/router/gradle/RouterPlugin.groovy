@@ -80,9 +80,11 @@ class RouterPlugin implements Plugin<Project> {
                             //def content = jsonSlurper.parse(child)
                             def content = readFileToString(child)
                             def t = gson.fromJson(content, new TypeToken<ArrayList<T>>(){}.type)
-                            markdownBuilder.append("## $t.description \n")
-                            markdownBuilder.append("- url: $t.url \n")
-                            markdownBuilder.append("- realPath: $t.realPath\n")
+                            ((List<T>) t).forEach { ob ->
+                                markdownBuilder.append("## $ob.description \n")
+                                markdownBuilder.append("- url: $ob.url \n")
+                                markdownBuilder.append("- realPath: $ob.realPath\n")
+                            }
                         }
                     }
                     RouterExtension extensiont = target["zhouzhengplugin"]

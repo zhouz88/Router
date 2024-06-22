@@ -3,7 +3,7 @@
   "component": {
     "group": "com.routerplugin.zheng",
     "module": "route",
-    "version": "16.0.0",
+    "version": "17.0.0",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -25,13 +25,13 @@
       },
       "files": [
         {
-          "name": "route-16.0.0.jar",
-          "url": "route-16.0.0.jar",
-          "size": 27052,
-          "sha512": "691e6393363bd2fa2b36668664830606458fb38cdf8f3d47792bfcf578612bc6e492bfdb0b8361184f0ce94c4f02d231319c5f987721346f5e113030f7040cac",
-          "sha256": "4a663904e2b929e43fb0bf02b380a8503259e4a2914c83a8c2169d605c46d147",
-          "sha1": "6b7a5e4931e2c4900028aa0ac8aa95ee15a92d75",
-          "md5": "080bd7a64ead12972e07c546a426d353"
+          "name": "route-17.0.0.jar",
+          "url": "route-17.0.0.jar",
+          "size": 28737,
+          "sha512": "675bf28c867b885e4c37a89a8dbe93de9b49967bf98d85701aa5db0bc9f2af3061a4e229197b399ade8a646b0d46a31bb053a07ba52113b8531d839ed7e985bc",
+          "sha256": "dca318262c35d269635a86fcabd64750ceb5f1106e4ac226d0d00d1745ad872a",
+          "sha1": "e742ace0df06f2d2f66cc294cc8208f8e4e10343",
+          "md5": "0d223b382cf9745145cca8ec7aea72a6"
         }
       ]
     },
@@ -55,13 +55,13 @@
       ],
       "files": [
         {
-          "name": "route-16.0.0.jar",
-          "url": "route-16.0.0.jar",
-          "size": 27052,
-          "sha512": "691e6393363bd2fa2b36668664830606458fb38cdf8f3d47792bfcf578612bc6e492bfdb0b8361184f0ce94c4f02d231319c5f987721346f5e113030f7040cac",
-          "sha256": "4a663904e2b929e43fb0bf02b380a8503259e4a2914c83a8c2169d605c46d147",
-          "sha1": "6b7a5e4931e2c4900028aa0ac8aa95ee15a92d75",
-          "md5": "080bd7a64ead12972e07c546a426d353"
+          "name": "route-17.0.0.jar",
+          "url": "route-17.0.0.jar",
+          "size": 28737,
+          "sha512": "675bf28c867b885e4c37a89a8dbe93de9b49967bf98d85701aa5db0bc9f2af3061a4e229197b399ade8a646b0d46a31bb053a07ba52113b8531d839ed7e985bc",
+          "sha256": "dca318262c35d269635a86fcabd64750ceb5f1106e4ac226d0d00d1745ad872a",
+          "sha1": "e742ace0df06f2d2f66cc294cc8208f8e4e10343",
+          "md5": "0d223b382cf9745145cca8ec7aea72a6"
         }
       ]
     }
