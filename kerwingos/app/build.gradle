@@ -1,7 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+apply plugin: 'com.android.application' //来自AGP
+apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
 //apply plugin: 'kotlin-android-extensions'
-apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
 
 //应用路由插件
 apply plugin: "com.zheng.router" //把插件代码应用到工程
@@ -43,6 +43,13 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    //这一步太麻烦了， 可以丢到自己的插件里去configure project处理 而不是 android 插件
+//    kapt {
+//        arguments {
+//            arg("root_project_dir", rootProject.projectDir.getAbsolutePath())
+//        }
+//    }
 }
 
 zhouzhengplugin {
@@ -52,8 +59,8 @@ zhouzhengplugin {
 dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation 'com.router-annotation.zheng:code:2.0.0'
-    kapt 'com.router-processor.zheng:code:3.0.0'
-    //kapt project(":processorLibs:router-processor")//
+    //kapt 'com.router-processor.zheng:code:3.0.0'
+    kapt project(":processorLibs:router-processor")//
 }
 
 

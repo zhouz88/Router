@@ -1,0 +1,69 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.routerplugin.zheng",
+    "module": "route",
+    "version": "16.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "route-16.0.0.jar",
+          "url": "route-16.0.0.jar",
+          "size": 27052,
+          "sha512": "691e6393363bd2fa2b36668664830606458fb38cdf8f3d47792bfcf578612bc6e492bfdb0b8361184f0ce94c4f02d231319c5f987721346f5e113030f7040cac",
+          "sha256": "4a663904e2b929e43fb0bf02b380a8503259e4a2914c83a8c2169d605c46d147",
+          "sha1": "6b7a5e4931e2c4900028aa0ac8aa95ee15a92d75",
+          "md5": "080bd7a64ead12972e07c546a426d353"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "route-16.0.0.jar",
+          "url": "route-16.0.0.jar",
+          "size": 27052,
+          "sha512": "691e6393363bd2fa2b36668664830606458fb38cdf8f3d47792bfcf578612bc6e492bfdb0b8361184f0ce94c4f02d231319c5f987721346f5e113030f7040cac",
+          "sha256": "4a663904e2b929e43fb0bf02b380a8503259e4a2914c83a8c2169d605c46d147",
+          "sha1": "6b7a5e4931e2c4900028aa0ac8aa95ee15a92d75",
+          "md5": "080bd7a64ead12972e07c546a426d353"
+        }
+      ]
+    }
+  ]
+}

@@ -1,17 +1,19 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
-
+//打包命令  ./gradlew :processorLibs:router-processor:jar
 //引入java 插件 帮助编译代码
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 //src/main/java 叫做源码目录 而package生成(com.zz.router_processor)的叫包结构\
 
 dependencies {
+    implementation "org.json:json:20210307"
     implementation  "com.router-annotation.zheng:code:2.0.0"
     //implementation project(":aptLibs:router-annotation")
     implementation 'com.google.auto.service:auto-service:1.0-rc6'
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    implementation 'com.google.code.gson:gson:2.8.1'
 }
 
 publishing {
@@ -19,7 +21,7 @@ publishing {
         mavenJava(MavenPublication)  {
             //5.0 implementation
             //6.0 api
-            version '3.0.0'
+            version '4.0.0'
             groupId 'com.router-processor.zheng'
             artifactId 'code'
             //   //若是war包，就写components.web,若是jar包，就写components.java

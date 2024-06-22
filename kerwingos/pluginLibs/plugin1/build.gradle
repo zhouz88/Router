@@ -11,6 +11,7 @@ targetCompatibility = JavaVersion.VERSION_11
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
+    implementation 'com.google.code.gson:gson:2.8.1'
 }
 // 插件的话，buildSrc 是规定必须这个名字
 publishing {
@@ -18,7 +19,7 @@ publishing {
         mavenJava(MavenPublication)  {
             //5.0 implementation
             //6.0 api
-            version '6.0.0'
+            version '16.0.0'
             groupId 'com.routerplugin.zheng'
             artifactId 'route'
             //   //若是war包，就写components.web,若是jar包，就写components.java

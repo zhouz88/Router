@@ -68,6 +68,11 @@ gradle.addBuildListener(new BuildAdapter(){
         println "lifecycle 构建结束"
     }
 })
+
+//把本次构建的任务所有名字都打印
+//gradle.taskGraph.beforeTask { task ->
+//    println("[all-task] " + task.name)
+//}
 //任务依赖 实际过程靠任务的链路去执行 如果有多个相同task 都会执行
 
 
@@ -84,3 +89,31 @@ gradle.addBuildListener(new BuildAdapter(){
 //2.在具体的子工程中应用插件 3 配置插件参数 比如android 插件
 
 //插件： 建立插件工程  配置插件入库实现插件  发布到maven库
+
+
+
+//是的，当您在 Android Studio 中点击 "Sync Project with Gradle Files" 按钮（通常简称为 "Sync" 按钮）时，Android Studio 会执行以下操作来同步和配置您的项目：
+//
+//读取项目结构：首先，Android Studio 会读取您的项目目录结构，特别是 settings.gradle 文件，以确定包含哪些模块（通常是 app 模块和其他可能的库模块）。
+//
+//执行 build.gradle 脚本：然后，Android Studio 会开始执行每个模块目录下的 build.gradle 文件。这些文件定义了模块的构建配置，包括依赖项、编译选项、插件设置等。
+//
+//配置 Project 对象：在执行这些 build.gradle 脚本时，Gradle 会创建并配置一个 Project 对象。这个对象包含了项目的所有配置信息，并且可以通过 Gradle API 进行访问和修改。
+//
+//下载依赖项：Gradle 会检查 build.gradle 文件中定义的依赖项，并下载任何尚未下载的依赖项。这些依赖项可能包括库、工具或其他构建时所需的资源。
+//
+//解析插件：如果 build.gradle 文件中使用了任何 Gradle 插件（如 Kotlin 的 kapt 插件），Gradle 会下载并解析这些插件。
+//
+//生成构建文件：基于 build.gradle 文件的配置，Gradle 会生成必要的构建文件（如中间文件、缓存文件等），以便后续构建过程可以使用。
+//
+//错误和警告：如果在执行 build.gradle 脚本或配置 Project 对象时遇到任何问题（如配置错误、依赖项冲突等），Gradle 会报告相应的错误或警告。
+//
+//同步完成：一旦所有 build.gradle 脚本都成功执行并且 Project 对象被正确配置，Android Studio 就会显示同步完成的消息，并且您就可以继续进行构建、运行或调试您的项目了。
+//
+//总之，点击 "Sync Project with Gradle Files" 按钮是确保您的 Android 项目与 Gradle 构建系统保持同步的重要步骤。
+
+
+// sync点击： Gradle 读取文件修改(一般文件build.gradle改动)Project 和 Settings对象的参数和配置，同时执行无关紧要的task prepareKotlinBuildScriptModel 意思下
+// ./gradlew 命令： 在上述步骤走一遍后，执行task!
+
+

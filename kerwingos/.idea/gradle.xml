@@ -4,17 +4,6 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <compositeConfiguration>
-          <compositeBuild compositeDefinitionSource="SCRIPT">
-            <builds>
-              <build path="$PROJECT_DIR$/buildSrc" name="buildSrc">
-                <projects>
-                  <project path="$PROJECT_DIR$/buildSrc" />
-                </projects>
-              </build>
-            </builds>
-          </compositeBuild>
-        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
         <option name="modules">
@@ -23,13 +12,13 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/aptLibs" />
             <option value="$PROJECT_DIR$/aptLibs/router-annotation" />
-            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/lib1" />
             <option value="$PROJECT_DIR$/libraries/lib2" />
             <option value="$PROJECT_DIR$/pluginLibs" />
             <option value="$PROJECT_DIR$/pluginLibs/plugin1" />
-            <option value="$PROJECT_DIR$/router-annotation" />
+            <option value="$PROJECT_DIR$/processorLibs" />
+            <option value="$PROJECT_DIR$/processorLibs/router-processor" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
