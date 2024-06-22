@@ -18,7 +18,7 @@ publishing {
         mavenJava(MavenPublication)  {
             //5.0 implementation
             //6.0 api
-            version '4.0.0'
+            version '6.0.0'
             groupId 'com.routerplugin.zheng'
             artifactId 'route'
             //   //若是war包，就写components.web,若是jar包，就写components.java
