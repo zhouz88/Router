@@ -37,11 +37,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
     buildFeatures {
-        compose true
         viewBinding true
     }
 }
@@ -52,6 +51,9 @@ zhouzhengplugin {
 
 dependencies {
     implementation("com.google.android.material:material:1.8.0")
+    implementation 'com.router-annotation.zheng:code:2.0.0'
+    kapt 'com.router-processor.zheng:code:3.0.0'
+    //kapt project(":processorLibs:router-processor")//
 }
 
 

@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+
+//引入java 插件 帮助编译代码
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+//src/main/java 叫做源码目录 而package生成(com.zz.router_processor)的叫包结构\
+
+dependencies {
+    implementation  "com.router-annotation.zheng:code:2.0.0"
+    //implementation project(":aptLibs:router-annotation")
+    implementation 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication)  {
+            //5.0 implementation
+            //6.0 api
+            version '3.0.0'
+            groupId 'com.router-processor.zheng'
+            artifactId 'code'
+            //   //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
+//            afterEvaluate {
+//                from components.release
+//            }
+            // 如果你需要添加额外的文件或配置，可以在这里进行
+        }
+    }
+
+    repositories {
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'admin123'
+            }
+        }
+    }
+}
+
+println "递归 routerProcessor"

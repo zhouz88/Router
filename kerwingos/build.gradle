@@ -25,6 +25,14 @@ allprojects {
         jcenter()
         maven { url 'https://jitpack.io' }
         maven { url = file("${project.rootDir}/repos") }
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+        }
     }
 }
 

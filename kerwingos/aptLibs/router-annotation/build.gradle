@@ -1,0 +1,75 @@
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+//声明依赖
+dependencies {
+    implementation gradleApi()
+   // implementation localGroovy()
+}
+//android {
+//    namespace 'com.zz.router_annotation'
+//    compileSdk 34
+//
+//    defaultConfig {
+//        applicationId "com.zz.router_annotation"
+//        minSdk 24
+//        targetSdk 34
+//        versionCode 1
+//        versionName "1.0"
+//
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    }
+//
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//        }
+//    }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+//}
+//
+//dependencies {
+//
+//    implementation libs.appcompat
+//    implementation libs.material
+//    testImplementation libs.junit
+//    androidTestImplementation libs.ext.junit
+//    androidTestImplementation libs.espresso.core
+//}
+publishing {
+    publications {
+        mavenJava(MavenPublication)  {
+            //5.0 implementation
+            //6.0 api
+            version '2.0.0'
+            groupId 'com.router-annotation.zheng'
+            artifactId 'code'
+            //   //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
+//            afterEvaluate {
+//                from components.release
+//            }
+            // 如果你需要添加额外的文件或配置，可以在这里进行
+        }
+    }
+
+    repositories {
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'admin123'
+            }
+        }
+    }
+}
+
+
+println "递归 router-annotation"

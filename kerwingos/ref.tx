@@ -1,0 +1,71 @@
+setting.g + /Users/zhouzheng/AndroidStudioProjects/kerwingos
+lifecycle 初始完成
+
+> Configure project :buildSrc
+递归 routeSrc
+
+> Configure project :
+递归 根目录
+
+> Configure project :app
+Plugin，插件代码开始应用到项目 app
+递归 app
+Plugin，app 的extension/Users/zhouzheng/AndroidStudioProjects/kerwingos
+Plugin，工程 app 的配置结束
+
+> Configure project :aptLibs:router-annotation
+递归 router-annotation
+
+> Configure project :libraries:lib1
+递归 lib1
+
+> Configure project :libraries:lib2
+递归 lib2
+
+> Configure project :pluginLibs:plugin1
+递归 routeSrc
+
+> Configure project :processorLibs:router-processor
+递归 routerProcessor
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/app
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/aptLibs/router-annotation
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/processorLibs/router-processor
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/libraries/lib1
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/libraries/lib2
+子工程路径/Users/zhouzheng/AndroidStudioProjects/kerwingos/pluginLibs/plugin1
+lifecycle 配置完成
+
+> Task :app:kaptDebugKotlin
+DestinationProcessor >>> process start ...
+DestinationProcessor >>> all destination1
+DestinationProcessor  <<< URL = route://glidetest
+DestinationProcessor  <<< description = glide测试页面
+DestinationProcessor  <<< realPath = com.zz.kerwingo.H
+warning: No SupportedSourceVersion annotation found on com.zz.router_processor.DestinationProcessor, returning RELEASE_6.
+warning: Supported source version 'RELEASE_6' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '17'
+DestinationProcessor >>> process start ...
+DestinationProcessor >>> all destination0
+
+> Task :app:compileDebugJavaWithJavac
+The following annotation processors are not incremental: code-2.0.0.jar (com.router-processor.zheng:code:2.0.0).
+Make sure all annotation processors are incremental to improve your build speed.
+lifecycle 构建结束
+
+
+:app:kaptDebugKotlin
+
+kapt：这是 Kotlin Annotation Processing Tool 的缩写。它是 Kotlin 编译器的一个插件，用于支持注解处理器（Annotation Processors）。
+注解处理器可以在编译时读取源代码中的注解，并生成额外的源代码文件、资源文件等。
+DebugKotlin：这指的是为“debug”构建变体（build variant）编译 Kotlin 代码。在 Android 中，你通常会有几个构建变体，
+如“debug”（用于开发时测试）和“release”（用于发布到生产环境）。
+所以，**:app:kaptDebugKotlin** 任务负责在“debug”构建变体下运行 Kotlin 注解处理器。这意味着它会在编译 Kotlin
+代码之前读取注解并生成必要的输出文件。
+
+:app:compileDebugJavaWithJavac
+
+compileDebugJavaWithJavac：这个任务负责编译“debug”构建变体下的 Java 代码。
+Javac：这是 Java 编译器（Java Compiler）的命令行工具的名称。在这里，它被用作 Gradle 任务的标识符，表示将使用 javac 命令来编译 Java 源代码。
+因此，**:app:compileDebugJavaWithJavac** 任务会将你的 Java 代码（如果项目中有）编译为字节码（即 .class 文件），并且这些文件是“debug”构建变体的一部分。
+
+总结：**:app:kaptDebugKotlin** 用于处理 Kotlin 代码中的注解，而 :app:compileDebugJavaWithJavac 用于编译 Java 代码。
+这两个任务都是 Android 构建过程中的一部分，确保你的源代码在编译时得到正确的处理。

@@ -24,6 +24,8 @@ include ':app'
 include ':libraries:lib1'
 include ':libraries:lib2'
 include ":pluginLibs:plugin1"
+include ":aptLibs:router-annotation"
+include ":processorLibs:router-processor"
 
 println "setting.g + ${rootProject.projectDir}"
 gradle.addBuildListener(new BuildAdapter(){
