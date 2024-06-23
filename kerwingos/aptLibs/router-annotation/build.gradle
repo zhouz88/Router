@@ -47,7 +47,7 @@ publishing {
         mavenJava(MavenPublication)  {
             //5.0 implementation
             //6.0 api
-            version '2.0.0'
+            version '3.0.0'
             groupId 'com.router-annotation.zheng'
             artifactId 'code'
             //   //若是war包，就写components.web,若是jar包，就写components.java

@@ -8,7 +8,9 @@ apply plugin: 'java'
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
 //声明依赖
+
 dependencies {
+    implementation 'com.android.tools.build:gradle:3.5.0'
     implementation gradleApi()
     implementation localGroovy()
     implementation 'com.google.code.gson:gson:2.8.1'
@@ -19,7 +21,7 @@ publishing {
         mavenJava(MavenPublication)  {
             //5.0 implementation
             //6.0 api
-            version '17.0.0'
+            version '22.0.0'
             groupId 'com.routerplugin.zheng'
             artifactId 'route'
             //   //若是war包，就写components.web,若是jar包，就写components.java

@@ -9,7 +9,7 @@ apply plugin: 'maven-publish'
 
 android {
     namespace 'com.zz.lib1'
-    compileSdk = 33
+    compileSdk = 31
 
     defaultConfig {
         minSdk 24
@@ -53,7 +53,7 @@ publishing {
         aar(MavenPublication) {
             //5.0 implementation
             //6.0 api
-            version '6.0.0'
+            version '7.0.0'
             groupId 'com.zhouzheng.widget'
             artifactId 'view'
 

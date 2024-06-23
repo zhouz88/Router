@@ -107,6 +107,7 @@ public class DestinationProcessor extends AbstractProcessor {
             System.out.println(TAG + "  <<< mapping = " + builder.toString());
             writer.write(builder.toString());
             writer.flush();
+            writer.close();
         } catch (Exception e) {
             throw new RuntimeException("STH wrong!!!!!!!!!!!!!!!!!!!!!!!!");
         }

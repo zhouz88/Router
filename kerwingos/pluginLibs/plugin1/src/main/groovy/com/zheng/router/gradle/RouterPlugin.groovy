@@ -1,5 +1,8 @@
 package com.zheng.router.gradle
 
+import com.android.build.api.transform.Transform
+import com.android.build.gradle.AppExtension
+import com.android.build.gradle.AppPlugin
 import com.google.gson.reflect.TypeToken
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -14,10 +17,19 @@ class RouterPlugin implements Plugin<Project> {
     //注入插件逻辑到project, 比如动态添加task （task 的参数在 extension添加？） 配置阶段执行
     @Override
     void apply(Project target) {
+        //注册Transform
+        if (target.plugins.hasPlugin(AppPlugin)) {
+            //com.android.application子工程
+            println "跑Plugin  >>> 注册transform试试"
+            AppExtension appExtension = target.extensions.getByType(AppExtension)
+            Transform transform = new RouterMappingTransform()
+            appExtension.registerTransform(transform)
+        }
+
+
         //1 自动帮用户传递路径参数到注解处理器中。
         //2 实现构建产物的自动清理 全新的构建都要clean 之前的 (1和2 为插件优化)
         //3 找到javaC 任务 并在javac 完成后 汇总生成好的json文件，最终生成一Md文件
-
         /**
          * //    kapt {
          //        arguments {
