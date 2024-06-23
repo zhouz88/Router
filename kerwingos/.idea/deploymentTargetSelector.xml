@@ -11,6 +11,9 @@
       <SelectionState runConfigName="aptLibs.router-annotation">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="libraries.route-runtime">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

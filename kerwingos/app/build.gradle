@@ -10,6 +10,7 @@ apply plugin: "com.zheng.router" //把插件代码应用到工程
 android {
     namespace = "com.zz.kerwingo"
     compileSdk = 33
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId = "com.zz.kerwingo"
@@ -60,7 +61,7 @@ dependencies {
     implementation("com.google.android.material:material:1.6.0")
     //这里遇到bug https://stackoverflow.com/questions/75283152/getting-cant-determine-type-for-tag-macro-name-m3-comp-assist-chip-containe
 
-
+    implementation 'com.route.contentcode:content:6.0.0'
     implementation  'com.routersublib.widget:code:4.0.0'
     implementation 'com.router-annotation.zheng:code:3.0.0'
     kapt 'com.router-processor.zheng:code:7.0.0'

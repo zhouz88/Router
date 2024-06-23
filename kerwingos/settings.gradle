@@ -26,6 +26,7 @@ include ':libraries:lib2'
 include ":pluginLibs:plugin1"
 include ":aptLibs:router-annotation"
 include ":processorLibs:router-processor"
+include ':libraries:route-runtime'
 enableFeaturePreview("VERSION_CATALOGS") //为了使用transform -> 变成gradle 7.2 -> 出现问题 ->加入这行//https://stackoverflow.com/questions/69082017/caused-by-org-gradle-api-invalidusercodeexception-using-dependency-catalogs-re
 
 println "setting.g + ${rootProject.projectDir}"
@@ -71,9 +72,9 @@ gradle.addBuildListener(new BuildAdapter(){
 })
 
 //把本次构建的任务所有名字都打印
-//gradle.taskGraph.beforeTask { task ->
-//    println("[all-task] " + task.name)
-//}
+gradle.taskGraph.beforeTask { task ->
+    println("[all-task] " + task.name)
+}
 //任务依赖 实际过程靠任务的链路去执行 如果有多个相同task 都会执行
 
 
@@ -141,5 +142,4 @@ gradle.addBuildListener(new BuildAdapter(){
 //由于gradle build执行了更多的任务，因此它通常需要更长的时间来完成3。
 //gradle assemble通常更快，因为它只执行必要的打包任务3。
 //总之，gradle build和gradle assemble在Gradle构建系统中都是有用的命令，但它们的范围、输出、依赖关系和使用场景有所不同。根据你的具体需求选择适当的命令。
-
 

@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.library'
+}
+apply plugin: 'maven-publish'
+
+apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
+//apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
+
+
+android {
+    namespace 'com.zz.route_runtime'
+    compileSdk = 31
+
+    defaultConfig {
+        minSdk 21
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.8"
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+
+}
+
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            //5.0 implementation
+            //6.0 api
+            version '6.0.0'
+            groupId 'com.route.contentcode'
+            artifactId 'content'
+
+            //from components.android
+            afterEvaluate {
+                from components.release
+            }
+            // 如果你需要添加额外的文件或配置，可以在这里进行
+        }
+    }
+
+    repositories {
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'admin123'
+            }
+        }
+    }
+}
+
+task Saygood() {
+    doLast {
+        println "lib2的一个任务"
+    }
+}
+
+
+task testTask() {
+    doLast {
+        println "日志 我是 testtask lib2"
+    }
+}
+
+println "递归 lib2"

@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/lib1" />
             <option value="$PROJECT_DIR$/libraries/lib2" />
+            <option value="$PROJECT_DIR$/libraries/route-runtime" />
             <option value="$PROJECT_DIR$/pluginLibs" />
             <option value="$PROJECT_DIR$/pluginLibs/plugin1" />
             <option value="$PROJECT_DIR$/processorLibs" />
