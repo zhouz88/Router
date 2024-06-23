@@ -118,3 +118,28 @@ gradle.addBuildListener(new BuildAdapter(){
 // ./gradlew 命令： 在上述步骤走一遍后，执行task!
 
 
+
+//在Gradle构建系统中，gradle build和gradle assemble（或其对应的gradlew build和gradlew assemble，当使用Gradle Wrapper时）是两个常见的命令，用于项目的构建和打包过程，但它们之间存在一些区别：
+//
+//任务范围：
+//
+//gradle build：执行完整的构建过程，这通常包括编译源代码、运行测试（如果有定义的话）、生成文档（如果配置了文档生成任务）以及打包输出（如JAR、APK等）1234。简而言之，build任务会执行项目中定义的所有构建步骤，确保最终生成的是一个完整且经过验证的构建产物2。
+//gradle assemble：专注于生成构建产物，即打包过程。它不会执行测试或生成文档，只是将编译的源代码、资源文件和其他必要的文件打包成一个或多个输出文件（如JAR、APK等）23。
+//输出：
+//
+//两者都会生成构建产物，但gradle build还会生成其他与构建过程相关的输出，如测试报告、文档等（如果配置了这些任务）3。
+//依赖关系：
+//
+//gradle build依赖于其他任务，如编译任务（compileJava等）、测试任务（test）和打包任务（jar、apk等）124。
+//gradle assemble通常只依赖于编译任务和打包任务2。
+//使用场景：
+//
+//当你想要确保代码的质量、执行所有必要的检查和测试，并生成完整的构建产物时，应该使用gradle build3。
+//如果你只是想快速生成一个构建产物，而不关心测试或文档等其他输出，那么可以使用gradle assemble3。
+//时间效率：
+//
+//由于gradle build执行了更多的任务，因此它通常需要更长的时间来完成3。
+//gradle assemble通常更快，因为它只执行必要的打包任务3。
+//总之，gradle build和gradle assemble在Gradle构建系统中都是有用的命令，但它们的范围、输出、依赖关系和使用场景有所不同。根据你的具体需求选择适当的命令。
+
+

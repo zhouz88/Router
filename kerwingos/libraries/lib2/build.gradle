@@ -1,15 +1,22 @@
 plugins {
     id 'com.android.library'
 }
-apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
+
+apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
 //apply plugin: 'kotlin-android-extensions'
-apply plugin: "kotlin-kapt"
+apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
+
+//应用路由插件
+apply plugin: "com.zheng.router" //把插件代码应用到工程
+
+
 android {
     namespace 'com.zz.lib2'
-    compileSdk = 33
+    compileSdk = 31
 
     defaultConfig {
-        minSdk 24
+        minSdk 21
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -25,16 +32,55 @@ android {
         kotlinCompilerExtensionVersion = "1.4.8"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
 dependencies {
+    //implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+    compileOnly 'com.github.ome450901:SimpleRatingBar:1.5.1'
+    implementation 'com.router-annotation.zheng:code:3.0.0'
+    kapt 'com.router-processor.zheng:code:7.0.0'
+//    implementation libs.appcompat
+//    implementation libs.material
+//    testImplementation libs.junit
+//    androidTestImplementation libs.ext.junit
+//    androidTestImplementation libs.espresso.core
+}
 
+
+
+publishing {
+    publications {
+        aar(MavenPublication) {
+            //5.0 implementation
+            //6.0 api
+            version '4.0.0'
+            groupId 'com.routersublib.widget'
+            artifactId 'code'
+
+            //from components.android
+            afterEvaluate {
+                from components.release
+            }
+            // 如果你需要添加额外的文件或配置，可以在这里进行
+        }
+    }
+
+    repositories {
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username 'admin'
+                password 'admin123'
+            }
+        }
+    }
 }
 
 task Saygood() {

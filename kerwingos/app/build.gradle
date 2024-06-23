@@ -61,6 +61,7 @@ dependencies {
     //这里遇到bug https://stackoverflow.com/questions/75283152/getting-cant-determine-type-for-tag-macro-name-m3-comp-assist-chip-containe
 
 
+    implementation  'com.routersublib.widget:code:4.0.0'
     implementation 'com.router-annotation.zheng:code:3.0.0'
     kapt 'com.router-processor.zheng:code:7.0.0'
     //kapt project(":processorLibs:router-processor")//

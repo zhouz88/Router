@@ -54,6 +54,9 @@ class RouterPlugin implements Plugin<Project> {
                 routerMappingDir.deleteDir()
             }
         }
+        if (!target.plugins.hasPlugin(AppPlugin)) {
+            return
+        }
         println "跑Plugin  >>>>>>>> 插件代码开始应用到项目 ${target.name}"
        // println "sss"
 
@@ -75,7 +78,7 @@ class RouterPlugin implements Plugin<Project> {
                 task.name.matches("compile.*JavaWithJavac")
             }.each { task ->
                 task.doLast {
-                    File routerMappingDir = new File(project.rootProject.projectDir, 'router_mapping')
+                    File routerMappingDir = new File(target.rootProject.projectDir, 'router_mapping')
                     if (!routerMappingDir.exists()) {
                         return
                     }
