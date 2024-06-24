@@ -27,6 +27,16 @@ public class H extends AppCompatActivity {
                 Router.INSTANCE.go(H.this, "route://kglidetest?message=happyness&count=100 %25");
             }
         });
+        importantMethod();
+        importantMethod2();
+    }
+
+    private void importantMethod() {
+
+    }
+
+    private void importantMethod2() {
+
     }
 }
 

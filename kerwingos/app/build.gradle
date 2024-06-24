@@ -18,11 +18,38 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "2.0"
+        multiDexEnabled true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions.addAll("vege", "soup")
+
+    productFlavors  {
+        cabbage{
+            dimension "vege"
+        }
+        eggplant{
+            dimension "vege"
+        }
+        spicy{
+            dimension "soup"
+            applicationIdSuffix ".spicy"
+        }
+        sweet{
+            dimension "soup"
+            applicationIdSuffix ".sweet"
+        }
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
         release {
             proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -58,6 +85,7 @@ zhouzhengplugin {
 }
 
 dependencies {
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation("com.google.android.material:material:1.6.0")
     //这里遇到bug https://stackoverflow.com/questions/75283152/getting-cant-determine-type-for-tag-macro-name-m3-comp-assist-chip-containe
 
