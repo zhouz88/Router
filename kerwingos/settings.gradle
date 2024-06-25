@@ -27,7 +27,7 @@ include ":pluginLibs:plugin1"
 include ":aptLibs:router-annotation"
 include ":processorLibs:router-processor"
 include ':libraries:route-runtime'
-enableFeaturePreview("VERSION_CATALOGS") //为了使用transform -> 变成gradle 7.2 -> 出现问题 ->加入这行//https://stackoverflow.com/questions/69082017/caused-by-org-gradle-api-invalidusercodeexception-using-dependency-catalogs-re
+enableFeaturePreview "VERSION_CATALOGS" //为了使用transform -> 变成gradle 7.2 -> 出现问题 ->加入这行//https://stackoverflow.com/questions/69082017/caused-by-org-gradle-api-invalidusercodeexception-using-dependency-catalogs-re
 
 println "setting.g + ${rootProject.projectDir}"
 gradle.addBuildListener(new BuildAdapter(){
