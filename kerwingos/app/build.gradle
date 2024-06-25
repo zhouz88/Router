@@ -6,7 +6,8 @@ apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
 //应用路由插件
 apply plugin: "com.zheng.router" //把插件代码应用到工程
 
-//下面这些东西叫做插件的 extension 用来做参数配置
+apply from: "./configTask.gradle"
+
 android {
     namespace = "com.zz.kerwingo"
     compileSdk = 33
@@ -23,24 +24,24 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    flavorDimensions.addAll("vege", "soup")
-
-    productFlavors  {
-        cabbage{
-            dimension "vege"
-        }
-        eggplant{
-            dimension "vege"
-        }
-        spicy{
-            dimension "soup"
-            applicationIdSuffix ".spicy"
-        }
-        sweet{
-            dimension "soup"
-            applicationIdSuffix ".sweet"
-        }
-    }
+//    flavorDimensions.addAll("vege", "soup")
+//
+//    productFlavors  {
+//        cabbage{
+//            dimension "vege"
+//        }
+//        eggplant{
+//            dimension "vege"
+//        }
+//        spicy{
+//            dimension "soup"
+//            applicationIdSuffix ".spicy"
+//        }
+//        sweet{
+//            dimension "soup"
+//            applicationIdSuffix ".sweet"
+//        }
+//    }
 
     buildTypes {
         debug {

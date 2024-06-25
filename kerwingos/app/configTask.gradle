@@ -1,0 +1,46 @@
+class Android {
+    String hello
+    String version
+    Config config = new Config()
+
+    def c = {
+        version = "woailuoddsafdsafasdfa"
+    }
+
+    void setConfig() {
+        c.delegate = config
+        c.resolveStrategy = Closure.OWNER_FIRST    //owerfirst 指的是 闭包的拥有者 做receiver // delegate是 delete做拥有者
+        c.call()
+        println "内部配置: ${config.version}"
+    }
+
+    @Override
+    String toString() {
+        return "Android{hello='$hello', version = '$version', config=$config}" // 直接输出 config 对象，会调用其 toString 方法
+    }
+}
+
+class Config {
+    String version
+
+    @Override
+    String toString() {
+        return "Config{version='$version'}"
+    }
+}
+
+// dosth 函数现在接受一个闭包，并在一个 Android 实例上调用它
+def dosth(Closure closure) {
+    def android = new Android()
+    closure.delegate = android
+    closure.call()
+    return android // 返回配置好的 Android 实例
+}
+
+// 使用 dosth 函数和闭包来配置 Android 实例
+def res = dosth {
+    hello = "heoo"
+    setConfig ()
+}
+
+println res.toString() // 输出 Android 实例的字符串表示，包括 hello 和 config 的 toString 方法输出

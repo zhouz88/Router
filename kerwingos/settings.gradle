@@ -143,3 +143,14 @@ gradle.taskGraph.beforeTask { task ->
 //gradle assemble通常更快，因为它只执行必要的打包任务3。
 //总之，gradle build和gradle assemble在Gradle构建系统中都是有用的命令，但它们的范围、输出、依赖关系和使用场景有所不同。根据你的具体需求选择适当的命令。
 
+//调出gradle面板的build 相关task: 切成android 模式，同时重启gradle提升的setting
+
+//gradlew build 和 assemble : 前者包含后者和 Lint和单元测试
+//gradle assemble 命令主要用于生成项目的输出文件，如 JAR、WAR 或 APK 文件等，
+// 但并不包括执行测试或其他额外的检查验收工作1。它主要是将编译后的代码和资源文件打包成可部署的文件，以便在其他环境中运行2。
+//
+//而 gradle build 命令则是一个更全面的构建过程，它不仅会执行 assemble 命令来生成输出文件，
+// 还会执行项目的单元测试、代码质量检查（如 Lint 检查）等额外的任务12。这些额外的任务有助于确保项目的质量和稳定性。
+//
+//因此，gradle build 命令相对于 gradle assemble 命令来说，多了测试和其他检查验收工作，
+// 以确保项目的完整性和质量。在开发过程中，通常推荐使用 gradle build 命令来进行全面的构建和测试，以确保项目的稳定性和可靠性
