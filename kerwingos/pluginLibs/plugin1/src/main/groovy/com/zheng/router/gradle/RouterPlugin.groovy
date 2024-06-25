@@ -60,8 +60,9 @@ class RouterPlugin implements Plugin<Project> {
         println "跑Plugin  >>>>>>>> 插件代码开始应用到项目 ${target.name}"
        // println "sss"
 
-        target.getExtensions().create("zhouzhengplugin", RouterExtension)
+        Object tttt = target.getExtensions().create("zhouzhengplugin", RouterExtension)
 
+        printf "跑Plugin >>>>>>>> 这里跑了吗" + tttt.getClass().getCanonicalName()
         target.afterEvaluate {
             //配置结束了 project 的配置结束 在这个project 执行换后执行
             RouterExtension extension = target["zhouzhengplugin"]

@@ -25,7 +25,16 @@ object Router {
                 }
             }
         } catch (e : Throwable) {
-            Log.e(TAG, "init: error while init")
+            val elements = e.stackTrace
+            val builder = StringBuilder()
+            for (i in 0 until  elements.size) {
+                if (i < 14) {
+                    val element = elements[i]
+                    builder.append(element.className).append(".").append(element.methodName)
+                        .append("\n")
+                }
+            }
+            Log.e(TAG, "init: error while init" + builder.toString())
         }
     }
 
