@@ -27,31 +27,31 @@
 //    }
 //}
 
-allprojects { //挪到setting
-    repositories {
-        google() //asm 来自这里
-        mavenCentral()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-        maven { url = file("${project.rootDir}/repos") }
-        maven {
-            url "http://localhost:8081/repository/maven-releases/"
-            allowInsecureProtocol true
-            credentials {
-                username "admin"
-                password "admin123"
-            }
-        }
-    }
-}
+//allprojects { //挪到setting
+//    repositories {
+//        google() //asm 来自这里
+//        mavenCentral()
+//        jcenter()
+//        maven { url 'https://jitpack.io' }
+//        maven { url = file("${project.rootDir}/repos") }
+//        maven {
+//            url "http://localhost:8081/repository/maven-releases/"
+//            allowInsecureProtocol true
+//            credentials {
+//                username "admin"
+//                password "admin123"
+//            }
+//        }
+//    }
+//}
 
-ext {
-    buildToolsVersion = '28.0.2'
-    compileSdkVersion = 33
-    minSdkVersion = 24
-    targetSdkVersion = 33
-    supportLibraryVersion = '27.1.1'
-}
+//ext {
+//    buildToolsVersion = '28.0.2'
+//    compileSdkVersion = 33
+//    minSdkVersion = 24
+//    targetSdkVersion = 33
+//    supportLibraryVersion = '27.1.1'
+//}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

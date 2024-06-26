@@ -39,24 +39,24 @@ pluginManagement {
 }
 
 
-//dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-//        google() //asm 来自这里
-//        mavenCentral()
-//        jcenter()
-//        maven { url 'https://jitpack.io' }
-//       // maven { url = file("${project.rootDir}/repos") }
-//        maven {
-//            url "http://localhost:8081/repository/maven-releases/"
-//            allowInsecureProtocol true
-//            credentials {
-//                username "admin"
-//                password "admin123"
-//            }
-//        }
-//    }
-//}
+dependencyResolutionManagement {
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google() //asm 来自这里
+        mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+       // maven { url = file("${project.rootDir}/repos") }
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+        }
+    }
+}
 
 rootProject.name = "KerwinGo"
 include ':app'
