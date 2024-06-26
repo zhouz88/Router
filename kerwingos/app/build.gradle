@@ -1,10 +1,16 @@
-apply plugin: 'com.android.application' //来自AGP
-apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
-//apply plugin: 'kotlin-android-extensions'
-apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
+plugins {
+    id 'com.android.application' version '7.0.0'
+    id 'kotlin-android' version '1.8.22'
+    id 'kotlin-kapt' version '1.8.22'
+    id 'com.zheng.router' version '28.0.0'
+    // 其他插件...
+}
+//apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
+////apply plugin: 'kotlin-android-extensions'
+//apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
 
 //应用路由插件
-apply plugin: "com.zheng.router" //把插件代码应用到工程
+//apply plugin: "com.zheng.router" //把插件代码应用到工程
 
 apply from: "./configTask.gradle"
 

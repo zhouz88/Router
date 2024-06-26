@@ -1,5 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'maven-publish'
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
 
 //打包命令  ./gradlew :processorLibs:router-processor:jar
 //引入java 插件 帮助编译代码

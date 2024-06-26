@@ -1,9 +1,11 @@
 plugins {
     id 'groovy'
+    id 'maven-publish'
+    id 'java'
 }
 //插件工程优先级很高 在root build.gradle 之前运行！
-apply plugin: 'maven-publish'
-apply plugin: 'java'
+//apply plugin: 'maven-publish'
+//apply plugin: 'java'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11

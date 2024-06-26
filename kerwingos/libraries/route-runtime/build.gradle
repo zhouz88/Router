@@ -1,12 +1,9 @@
 plugins {
     id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'maven-publish'
 }
-apply plugin: 'maven-publish'
-
-apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
-//apply plugin: 'kotlin-android-extensions'
-apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
-
 
 android {
     namespace 'com.zz.route_runtime'

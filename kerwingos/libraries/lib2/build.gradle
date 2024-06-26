@@ -1,14 +1,11 @@
+
 plugins {
     id 'com.android.library'
+    id 'kotlin-android'  //来自插件 kotlin-gradle-plugin:
+    id 'kotlin-kapt'  //来自插件 kotlin-gradle-plugin:
+    id 'maven-publish'
 }
-apply plugin: 'maven-publish'
-
-apply plugin: 'kotlin-android' //来自插件kotlin-gradle-plugin:
-//apply plugin: 'kotlin-android-extensions'
-apply plugin: "kotlin-kapt"  //来自插件 kotlin-gradle-plugin:
-
-//应用路由插件
-apply plugin: "com.zheng.router" //把插件代码应用到工程
+//把插件代码应用到工程
 
 
 android {

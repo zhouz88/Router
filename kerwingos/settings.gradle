@@ -1,21 +1,60 @@
-//pluginManagement {
-//    repositories {
-//        google {
-//            content {
-//                includeGroupByRegex("com\\.android.*")
-//                includeGroupByRegex("com\\.google.*")
-//                includeGroupByRegex("androidx.*")
-//            }
-//        }
-//        mavenCentral()
-//        gradlePluginPortal()
-//    }
-//}
+pluginManagement {
+
+    ext {
+        booster_version = '2.3.1'
+        kotlin_version = '1.8.22'
+    }
+    repositories {
+        //maven { url = file("${project.rootDir}/repos") }
+        google()
+        mavenCentral()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url "http://localhost:8081/repository/maven-releases/"
+            allowInsecureProtocol true
+            credentials {
+                username "admin"
+                password "admin123"
+            }
+        }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            println " quest id  >>>>>>>>>>>>>>>>>>>>>>"+requested.id.id
+            println " quest name  >>>>>>>>>>>>>>>>>>>>>>"+requested.id.name
+            println " quest namespace  >>>>>>>>>>>>>>>>>>>>>>"+requested.id.namespace
+            println " quest xxx >>>>"
+            if (requested.id.namespace == 'com.android') {
+                useModule 'com.android.tools.build:gradle:7.0.0'
+            }
+            if (requested.id.id   == 'com.zheng.router') {
+                useModule 'com.routerplugin.zheng:route:28.0.0'
+            }
+            if (requested.id.id   == 'kotlin-android' ||requested.id.id  == 'kotlin-kapt' ) {
+                useModule "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"
+            }
+        }
+    }
+}
+
+
 //dependencyResolutionManagement {
 //    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 //    repositories {
-//        google()
+//        google() //asm 来自这里
 //        mavenCentral()
+//        jcenter()
+//        maven { url 'https://jitpack.io' }
+//       // maven { url = file("${project.rootDir}/repos") }
+//        maven {
+//            url "http://localhost:8081/repository/maven-releases/"
+//            allowInsecureProtocol true
+//            credentials {
+//                username "admin"
+//                password "admin123"
+//            }
+//        }
 //    }
 //}
 
