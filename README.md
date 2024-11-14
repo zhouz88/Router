@@ -3,4 +3,4 @@
 使用classic generate!!
 
 
-https://blog.csdn.net/zgrcoder/article/details/136145055  AS/GRADLE/BUILDTOOLS/SDK/JDK 关系
+https://blog.csdn.net/zgrcoder/article/details/136145055  AS/GRADLE/BUILDTOOLS/agp/JDK 关系
